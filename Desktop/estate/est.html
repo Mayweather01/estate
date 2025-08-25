@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=0" />
+  <title>AA Dominion Estate Ltd — Real Estate • Design • Construction</title>
+  <meta name="description" content="AA Dominion Estate Ltd & AA Dominion Estate Management Ltd. Real estate development, architectural design, construction, property sales, apartment management, building materials, interior cleaning, land registration (R of O, C of O, Sales Agreement), renting & leasing in Abuja." />
+
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --card: #0f1620;
+      --muted: #8aa0b3;
+      --accent: #0bb57b;
+      --accent-2:#19c2ff;
+      --text: #e9f0f7;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 20px;
+      --radius-sm: 14px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto;
+      color:var(--text);
+      background:radial-gradient(1200px 600px at 70% -10%, #0b5 0%, transparent 60%), linear-gradient(180deg, #0a0f14 0%, #090d12 100%);
+      background-attachment: fixed;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1200px, 92%); margin:0 auto}
+
+    /* Header */
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(12px); background:rgba(9,13,18,.6); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
+    nav ul{display:flex; gap:22px; list-style:none}
+    nav a{opacity:.9}
+    nav a:hover{opacity:1}
+    .btn{padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); font-weight:600; transition:.25s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#05150e; border:none;}
+
+    /* Hero */
+    .hero{padding:72px 0 48px; display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center}
+    .hero h1{font-size:clamp(2.2rem,3.8vw,3.4rem); margin:12px 0}
+    .hero p{color:var(--muted)}
+    .hero .cta-row{margin-top:20px; display:flex; gap:14px}
+    .hero img{border-radius:var(--radius); box-shadow:var(--shadow)}
+
+    /* Sections */
+    section{padding:64px 0}
+    .section-head{margin-bottom:24px}
+    .eyebrow{font-weight:700; text-transform:uppercase; font-size:.8rem; color:#a3e8cf; letter-spacing:.15em}
+    h2{font-size:clamp(1.6rem,2.6vw,2.4rem)}
+    .lead{color:var(--muted)}
+
+    /* Services */
+    .grid{display:grid; gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .service{background:var(--card); padding:20px; border-radius:var(--radius); border:1px solid rgba(255,255,255,.06); transition:.3s}
+    .service:hover{transform:translateY(-4px); border-color:var(--accent); box-shadow:0 6px 22px rgba(25,194,255,.2)}
+
+    /* Highlights */
+    .highlight{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+    .feature-card{background:var(--card); padding:20px; border-radius:var(--radius)}
+
+    /* Portfolio */
+    .portfolio{columns:3 240px; gap:12px}
+    .portfolio img{width:100%; border-radius:var(--radius-sm); margin-bottom:12px; display:block}
+
+    /* Testimonials */
+    .testimonials{overflow-x:auto; display:flex; gap:16px; scroll-snap-type:x mandatory; padding-bottom:10px}
+    .testimonial{flex:0 0 300px; background:var(--card); padding:18px; border-radius:var(--radius); scroll-snap-align:start}
+
+    /* FAQ */
+    .faq{max-width:700px; margin:auto}
+    .faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+    .faq-q{padding:14px; cursor:pointer; font-weight:600; display:flex; justify-content:space-between}
+    .faq-a{max-height:0; overflow:hidden; transition:max-height .4s ease; padding:0 14px; color:var(--muted)}
+    .faq-item.active .faq-a{max-height:200px; padding:10px 14px}
+
+    /* Contact */
+    .contact{display:grid; grid-template-columns:1.1fr .9fr; gap:24px}
+    input, textarea{background:#0a1219; border:1px solid rgba(255,255,255,.1); border-radius:14px; padding:14px; color:var(--text); width:100%}
+    textarea{min-height:120px}
+
+    /* Footer */
+    footer{padding:36px 0; color:#b3c4d3; background:#0a1016}
+    .foot{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:20px}
+
+    /* Responsive */
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .highlight{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      .foot{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:620px){
+      nav ul{display:none}
+      .grid.cols-3{grid-template-columns:1fr}
+      .foot{grid-template-columns:1fr}
+    }
+
+    /* Animations */
+    .reveal{opacity:0; transform:translateY(20px); transition:.7s cubic-bezier(.2,.8,.3,1)}
+    .reveal.visible{opacity:1; transform:none}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="brand">AA Dominion Estate</div>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#highlights">Highlights</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="cta">
+      <a class="btn" href="tel:+2347070250605">Call</a>
+      <a class="btn primary" href="https://wa.me/2348111955667">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <!-- Hero -->
+  <section class="hero reveal">
+    <div>
+      <span class="badge">Real Estate • Design • Construction</span>
+      <h1>Beautiful spaces. Bullet‑proof deals.</h1>
+      <p>End‑to‑end property solutions in Abuja — development, design, construction, management, and registration.</p>
+      <div class="cta-row">
+        <a class="btn" href="tel:+2347070250605">📞 Call</a>
+        <a class="btn primary" href="https://wa.me/2348111955667">💬 WhatsApp</a>
+      </div>
+    </div>
+    <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1200" alt="Modern architecture">
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="reveal">
+    <div class="section-head">
+      <span class="eyebrow">Our Activities</span>
+      <h2>What we do</h2>
+      <p class="lead">From real estate development to leasing, we cover the full property cycle.</p>
+    </div>
+    <div class="grid cols-3">
+      <div class="service"><h3>Real Estate Development</h3><p>From land acquisition to turnkey delivery.</p></div>
+      <div class="service"><h3>Architectural Design</h3><p>Residential & commercial designs that balance beauty & budget.</p></div>
+      <div class="service"><h3>Construction</h3><p>Quality finishing & HSE compliance from foundation to roof.</p></div>
+      <div class="service"><h3>Property Sales</h3><p>Verified listings, due diligence, seamless closing.</p></div>
+      <div class="service"><h3>Apartment Management</h3><p>Tenant vetting, rent collection, maintenance.</p></div>
+      <div class="service"><h3>Materials Supply</h3><p>Bulk sourcing and on‑time site delivery.</p></div>
+      <div class="service"><h3>Interior Cleaning</h3><p>Post‑construction and move‑in deep cleaning.</p></div>
+      <div class="service"><h3>Land Registration</h3><p>R of O, C of O, Sales Agreement processing.</p></div>
+      <div class="service"><h3>Renting & Leasing</h3><p>Find tenants or lease for guaranteed returns.</p></div>
+    </div>
+  </section>
+
+  <!-- Highlights -->
+  <section id="highlights" class="reveal">
+    <div class="section-head">
+      <span class="eyebrow">Why choose us</span>
+      <h2>Trusted by owners & investors</h2>
+    </div>
+    <div class="highlight">
+      <div class="feature-card"><h3>Documentation done right</h3><p>Proper records so your investment stays protected.</p></div>
+      <div class="feature-card"><h3>Design that sells</h3><p>Beauty and buildability balanced with market demand.</p></div>
+      <div class="feature-card"><h3>24/7 Support</h3><p>Always available via WhatsApp and direct calls.</p></div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="reveal">
+    <div class="section-head">
+      <span class="eyebrow">Portfolio</span>
+      <h2>Our projects</h2>
+    </div>
+    <div class="portfolio">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600" alt="Project">
+      <img src="https://images.unsplash.com/photo-1598928506311-c55dedb78c84?w=600" alt="Project">
+      <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600" alt="Project">
+      <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600" alt="Project">
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="reveal">
+    <div class="section-head">
+      <span class="eyebrow">Testimonials</span>
+      <h2>What clients say</h2>
+    </div>
+    <div class="testimonials">
+      <div class="testimonial"><p>“AA Dominion handled my land registration quickly and professionally.”</p><small>– Mr. Ade, Investor</small></div>
+      <div class="testimonial"><p>“Their design made my house stand out, yet within budget.”</p><small>– Mrs. Bello, Homeowner</small></div>
+      <div class="testimonial"><p>“Reliable tenant management, I never worry about rent anymore.”</p><small>– Landlord, Abuja</small></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="reveal">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item"><div class="faq-q">How long does land registration take? <span>+</span></div><div class="faq-a">Usually 4–8 weeks depending on government processing.</div></div>
+      <div class="faq-item"><div class="faq-q">Do you help with tenant screening? <span>+</span></div><div class="faq-a">Yes, we vet tenants thoroughly before leasing agreements.</div></div>
+      <div class="faq-item"><div class="faq-q">Can you design commercial spaces? <span>+</span></div><div class="faq-a">Absolutely, we handle residential & commercial architectural designs.</div></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="reveal">
+    <div class="section-head">
+      <span class="eyebrow">Contact</span>
+      <h2>Let’s talk about your property</h2>
+    </div>
+    <div class="contact">
+      <form onsubmit="return submitForm(event)">
+        <input name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Phone / WhatsApp">
+        <textarea name="message" placeholder="Tell us about your request…" required></textarea>
+        <button class="btn primary">Send Message</button>
+      </form>
+      <iframe title="Map" style="width:100%;height:100%;border:0;border-radius:var(--radius)" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63615.15362453163!2d7.564!3d8.912"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <div><strong>AA Dominion Estate</strong><br><small>© <span id="year"></span> All rights reserved.</small></div>
+    <div><strong>Links</strong><br><a href="#services">Services</a><br><a href="#portfolio">Portfolio</a></div>
+    <div><strong>Contact</strong><br><a href="tel:+2347070250605">0707 025 0605</a><br><a href="https://wa.me/2348111955667">0811 195 5667 (WhatsApp)</a></div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})
+  },{threshold:.14});
+  revealEls.forEach(el=>io.observe(el));
+
+  // Fake form submit
+  function submitForm(evt){
+    evt.preventDefault();
+    const data = Object.fromEntries(new FormData(evt.target).entries());
+    alert(`Thank you, ${data.name}! We will reach you at ${data.phone||data.email}.`);
+    evt.target.reset();
+    return false;
+  }
+
+  // FAQ toggle
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>q.parentElement.classList.toggle('active'))
+  });
+</script>
+</body>
+</html>
